@@ -12,15 +12,15 @@ This page has instructions to set-up IAM policies for SQS, SNS and ELB.
 Run this command for **Orchestration** pattern.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
+git clone ${GIT_URL}/amazon-eks-saga-orchestration-aws
+cd amazon-eks-saga-orchestration-aws/scripts
 ./iam.sh ${REGION_ID} ${ACCOUNT_ID} O
 ```
 
 To remove IAM set-up, run the following commands.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
+git clone ${GIT_URL}/amazon-eks-saga-orchestration-aws
+cd amazon-eks-saga-orchestration-aws/scripts
 ./ciam.sh ${ACCOUNT_ID} O
 ```

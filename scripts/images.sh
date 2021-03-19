@@ -26,16 +26,17 @@ e_images() {
   REGION_ID=$1
   ACCOUNT_ID=$2
   GIT_URL=$3
+  REPO_PREFIX=$4
 
   BUILD_DIR=../build
   mkdir ${BUILD_DIR}  
 
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-orders' 'orders'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-orders-rb' 'ordersrb'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-inventory' 'inventory'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-audit' 'audit'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-trail' 'trail'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-orchestrator' 'orchestrator'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}orders" 'orders'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}orders-rb" 'ordersrb'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}inventory" 'inventory'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}audit" 'audit'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}trail" 'trail'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}orchestrator" 'orchestrator'
 
   rm -rf ${BUILD_DIR}
 }
@@ -57,7 +58,11 @@ fi
 
 case "${DEMO_TYPE}" in
   O)
-    e_images ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL}
+    e_images ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} amazon-eks-saga-orchestration-
+    ;;
+
+  C)
+    e_images ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} amazon-eks-saga-choreography-
     ;;
 
   *)

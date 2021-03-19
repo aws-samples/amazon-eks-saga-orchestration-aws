@@ -13,8 +13,8 @@ This page has instructions to set-up AWS SNS topics and subscriptions into AWS S
 Run this command to create topics, subscriptions queue for **Orchestration** pattern.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
+git clone ${GIT_URL}/amazon-eks-saga-orchestration-aws
+cd amazon-eks-saga-orchestration-aws/scripts
 ./orchestration.sh ${REGION_ID} ${ACCOUNT_ID}
 ```
 
@@ -23,7 +23,7 @@ cd eks-saga-aws/scripts
 To clean up after the **Orchestration** demo, run this command.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
+git clone ${GIT_URL}/amazon-eks-saga-orchestration-aws
+cd amazon-eks-saga-orchestration-aws/scripts
 ./cleanup.sh ${REGION_ID} ${ACCOUNT_ID} O
 ```

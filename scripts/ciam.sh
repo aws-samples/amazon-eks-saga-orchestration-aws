@@ -9,8 +9,6 @@ r_policy() {
   aws iam delete-policy --policy-arn arn:aws:iam::${ACCOUNT_ID}:policy/eks-saga-sqs-orche-policy
   echo 'Removing AWS SNS policy'
   aws iam delete-policy --policy-arn arn:aws:iam::${ACCOUNT_ID}:policy/eks-saga-sns-orche-policy
-  echo 'Removing AWS ELB policy'
-  aws iam delete-policy --policy-arn arn:aws:iam::${ACCOUNT_ID}:policy/eks-saga-elb-policy
 }
 
 if [[ $# -ne 2 ]] ; then
