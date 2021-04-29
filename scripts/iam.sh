@@ -27,7 +27,7 @@ elb_policy() {
   JSON_DIR=../json
   cd ${JSON_DIR}
 
-  POLICY_ARN=`aws iam create-policy --policy-name eks-saga-elb-policy --policy-document file://eks-saga-elb-policy.json --query 'Policy.Arn' --output text`
+  POLICY_ARN=`aws iam create-policy --policy-name eks-saga-elb-orche-policy --policy-document file://eks-saga-elb-policy.json --query 'Policy.Arn' --output text`
   echo "ELB Policy ARN: ${POLICY_ARN}"
 }
 
