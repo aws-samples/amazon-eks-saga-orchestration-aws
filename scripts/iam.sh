@@ -27,6 +27,8 @@ elb_policy() {
   JSON_DIR=../json
   cd ${JSON_DIR}
 
+  curl -o eks-saga-elb-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.2.0/docs/install/iam_policy.json
+
   POLICY_ARN=`aws iam create-policy --policy-name eks-saga-elb-orche-policy --policy-document file://eks-saga-elb-policy.json --query 'Policy.Arn' --output text`
   echo "ELB Policy ARN: ${POLICY_ARN}"
 }
