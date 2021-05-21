@@ -4,7 +4,7 @@ set -e
 
 e_create() {
   REPO_NAME=$1
-  REPO_ARN=`aws ecr create-repository --repository-name eks-saga/${REPO_NAME} --image-scanning-configuration scanOnPush=true --tags Key=project,Value=eks-saga Key=projectType,Value=demo --query 'repository.repositoryArn' --output text`
+  REPO_ARN=`aws ecr create-repository --repository-name eks-saga/${REPO_NAME} --image-scanning-configuration scanOnPush=true --tags Key=project,Value=eks-saga-orchestration Key=projectType,Value=demo --query 'repository.repositoryArn' --output text`
   echo "${REPO_NAME} - ${REPO_ARN}"
 }
 

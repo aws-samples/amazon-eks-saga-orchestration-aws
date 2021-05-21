@@ -62,8 +62,6 @@ cleanUpOrchestration() {
   remove_queue ${REGION_ID} ${ACCOUNT_ID} 'eks-saga-inventory-input'
   remove_queue ${REGION_ID} ${ACCOUNT_ID} 'eks-saga-audit'
   remove_queue ${REGION_ID} ${ACCOUNT_ID} 'eks-saga-orchestrator'
-
-  echo 'Finished clean-up of Orchestration demo'
 }
 
 cleanUp() {
